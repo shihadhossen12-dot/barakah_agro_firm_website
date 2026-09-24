@@ -1,0 +1,6 @@
+{
+  "name": "Barakah Agro - Pure Food & Organic Grocery",
+  "description": "Premium Bangladeshi organic agro grocery store offering pure wood-pressed mustard oil, Sundarban raw honey, authentic ghee, sajna leaf powder, dates, and natural foods.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

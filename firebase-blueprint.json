@@ -1,0 +1,167 @@
+{
+  "entities": {
+    "Product": {
+      "title": "Product",
+      "description": "Barakah Agro organic and wood-pressed product item",
+      "type": "object",
+      "properties": {
+        "id": { "type": "number", "description": "Unique numeric or string product identifier" },
+        "name": { "type": "string", "description": "Product English / common title" },
+        "banglaName": { "type": "string", "description": "Product Bengali title" },
+        "slug": { "type": "string", "description": "SEO URL slug" },
+        "category": { "type": "string", "description": "Category name" },
+        "categorySlug": { "type": "string", "description": "Category slug" },
+        "brand": { "type": "string", "description": "Brand name e.g. Barakah Agro" },
+        "sku": { "type": "string", "description": "Stock keeping unit" },
+        "price": { "type": "number", "description": "Current selling price in BDT" },
+        "oldPrice": { "type": "number", "description": "Original price before discount" },
+        "stock": { "type": "number", "description": "Available stock quantity" },
+        "weight": { "type": "string", "description": "Weight representation e.g. 500g, 1L" },
+        "unit": { "type": "string", "description": "Unit of measurement e.g. kg, liter, pcs" },
+        "image": { "type": "string", "description": "Main primary product image URL" },
+        "gallery": { "type": "array", "description": "Additional gallery images", "items": { "type": "string" } },
+        "shortDescription": { "type": "string", "description": "Short summary" },
+        "description": { "type": "string", "description": "Full details and description" },
+        "ingredients": { "type": "string", "description": "Product ingredients" },
+        "benefits": { "type": "array", "description": "Health and nutrition benefits", "items": { "type": "string" } },
+        "rating": { "type": "number", "description": "Customer average rating" },
+        "reviewCount": { "type": "number", "description": "Total review count" },
+        "badges": { "type": "array", "description": "Badges like BEST SELLING", "items": { "type": "string" } },
+        "isFeatured": { "type": "boolean", "description": "Whether shown in featured section" },
+        "isOffer": { "type": "boolean", "description": "Whether included in hot deals" },
+        "isBestSeller": { "type": "boolean", "description": "Best seller status" },
+        "isNewArrival": { "type": "boolean", "description": "New arrival status" },
+        "isActive": { "type": "boolean", "description": "Active status in storefront" },
+        "isArchived": { "type": "boolean", "description": "Soft-deleted or archived flag" },
+        "tags": { "type": "array", "description": "Product tags", "items": { "type": "string" } },
+        "packages": { "type": "array", "description": "Variants or package options", "items": { "type": "object" } },
+        "createdAt": { "type": "string", "description": "ISO timestamp" },
+        "updatedAt": { "type": "string", "description": "ISO timestamp" }
+      },
+      "required": ["name", "price", "stock", "category"]
+    },
+    "Category": {
+      "title": "Category",
+      "description": "Product category",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Category ID" },
+        "name": { "type": "string", "description": "English category name" },
+        "banglaName": { "type": "string", "description": "Bangla category name" },
+        "slug": { "type": "string", "description": "Category slug" },
+        "image": { "type": "string", "description": "Category cover image" },
+        "itemCount": { "type": "number", "description": "Number of active items" },
+        "description": { "type": "string", "description": "Category description" },
+        "isActive": { "type": "boolean", "description": "Active in storefront" },
+        "isArchived": { "type": "boolean", "description": "Archived status" },
+        "displayOrder": { "type": "number", "description": "Sorting priority" }
+      },
+      "required": ["name", "slug"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "Customer order details",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Order ID e.g. BA-2026-0001" },
+        "customerName": { "type": "string", "description": "Customer full name" },
+        "phone": { "type": "string", "description": "Contact phone number" },
+        "altPhone": { "type": "string", "description": "Alternative phone number" },
+        "email": { "type": "string", "description": "Customer email" },
+        "division": { "type": "string", "description": "Delivery division" },
+        "district": { "type": "string", "description": "Delivery district" },
+        "upazila": { "type": "string", "description": "Delivery thana/upazila" },
+        "address": { "type": "string", "description": "Full street address" },
+        "deliveryLocation": { "type": "string", "description": "inside or outside Dhaka" },
+        "items": { "type": "array", "description": "Ordered products list", "items": { "type": "object" } },
+        "subtotal": { "type": "number", "description": "Subtotal in BDT" },
+        "discount": { "type": "number", "description": "Applied discount in BDT" },
+        "shippingFee": { "type": "number", "description": "Delivery cost in BDT" },
+        "total": { "type": "number", "description": "Final total payable" },
+        "paymentMethod": { "type": "string", "description": "cod, bkash, nagad" },
+        "paymentStatus": { "type": "string", "description": "Pending, Paid, Refunded" },
+        "trxId": { "type": "string", "description": "bKash/Nagad transaction ID" },
+        "status": { "type": "string", "description": "Pending, Confirmed, Processing, Packed, Shipped, Out for Delivery, Delivered, Cancelled" },
+        "statusHistory": { "type": "array", "description": "Status timeline log", "items": { "type": "object" } },
+        "notes": { "type": "string", "description": "Customer delivery note" },
+        "adminNotes": { "type": "string", "description": "Internal admin notes" },
+        "createdAt": { "type": "string", "description": "ISO timestamp" }
+      },
+      "required": ["customerName", "phone", "address", "total", "status"]
+    },
+    "Customer": {
+      "title": "Customer",
+      "description": "Store customer record",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Customer ID or phone/email identifier" },
+        "name": { "type": "string", "description": "Customer name" },
+        "phone": { "type": "string", "description": "Phone number" },
+        "email": { "type": "string", "description": "Email address" },
+        "address": { "type": "string", "description": "Saved address" },
+        "totalOrders": { "type": "number", "description": "Number of placed orders" },
+        "totalSpent": { "type": "number", "description": "Total spend in BDT" },
+        "isActive": { "type": "boolean", "description": "Active or suspended status" },
+        "createdAt": { "type": "string", "description": "ISO timestamp" }
+      },
+      "required": ["name", "phone"]
+    },
+    "Admin": {
+      "title": "Admin",
+      "description": "Authorized admin account credentials and permissions",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Admin identifier" },
+        "email": { "type": "string", "description": "Admin login email" },
+        "name": { "type": "string", "description": "Admin full name" },
+        "role": { "type": "string", "description": "Role e.g. superadmin, manager" },
+        "passwordHash": { "type": "string", "description": "Admin password" },
+        "isActive": { "type": "boolean", "description": "Active status" },
+        "createdAt": { "type": "string", "description": "ISO timestamp" }
+      },
+      "required": ["email", "passwordHash"]
+    },
+    "SiteSettings": {
+      "title": "SiteSettings",
+      "description": "Homepage and store settings",
+      "type": "object",
+      "properties": {
+        "storeName": { "type": "string" },
+        "banglaStoreName": { "type": "string" },
+        "tagline": { "type": "string" },
+        "banglaTagline": { "type": "string" },
+        "announcementText": { "type": "string" },
+        "hotline": { "type": "string" },
+        "whatsappNumber": { "type": "string" },
+        "email": { "type": "string" },
+        "address": { "type": "string" },
+        "logo": { "type": "string" },
+        "heroHeadline": { "type": "string" },
+        "heroSubheadline": { "type": "string" },
+        "heroImage": { "type": "string" },
+        "heroButtonText": { "type": "string" },
+        "heroButtonLink": { "type": "string" },
+        "heroButton2Text": { "type": "string" },
+        "heroButton2Link": { "type": "string" },
+        "facebookUrl": { "type": "string" },
+        "instagramUrl": { "type": "string" },
+        "youtubeUrl": { "type": "string" },
+        "freeShippingThreshold": { "type": "number" },
+        "insideDhakaFee": { "type": "number" },
+        "outsideDhakaFee": { "type": "number" }
+      }
+    }
+  },
+  "firestore": {
+    "collections": {
+      "/products/{productId}": { "schema": "Product" },
+      "/categories/{categoryId}": { "schema": "Category" },
+      "/orders/{orderId}": { "schema": "Order" },
+      "/customers/{customerId}": { "schema": "Customer" },
+      "/admins/{adminId}": { "schema": "Admin" },
+      "/reviews/{reviewId}": { "schema": "object" },
+      "/coupons/{couponId}": { "schema": "object" },
+      "/siteSettings/{settingId}": { "schema": "SiteSettings" }
+    }
+  }
+}
