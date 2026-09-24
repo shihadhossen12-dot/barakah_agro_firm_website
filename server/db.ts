@@ -42,7 +42,7 @@ const initialSeed: DatabaseSchema = {
     address: 'House 14, Road 7, Sector 3, Uttara, Dhaka-1230, Bangladesh',
     announcementText: '🚚 সমগ্র বাংলাদেশে ক্যাশ অন ডেলিভারি | ২০০০ টাকার কেনাকাটায় ফ্রি হোম ডেলিভারি | হটলাইন: ০১৭৮৬-২৩৯১৮৫',
     heroHeadline: 'বিশুদ্ধ খাবার, সুস্থ জীবনের প্রতিশ্রুতি',
-    heroSubheadline: 'কাঠের ঘানিতে ভাঙ্গা খাঁটি সরিষার তেল, সুন্দরবনের প্রাকৃতিক মধু ও পুষ্টিকর সুপারফুড সরাসরি আপনার ঘরে।',
+    heroSubheadline: 'কাঠের ঘানিতে ভাঙ্গা খাঁটি সরিষার তেল,পুষ্টিকর সুপারফুড সরাসরি আপনার ঘরে।',
     heroImage: '/images/generated/hero_agro_farm_1790250221055.jpg',
     facebookUrl: 'https://facebook.com/barakahagro',
     instagramUrl: 'https://instagram.com/barakahagro',
