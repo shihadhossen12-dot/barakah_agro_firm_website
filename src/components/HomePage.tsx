@@ -57,7 +57,7 @@ export const HomePage: React.FC<HomePageProps> = ({
   const headline = settings?.heroHeadline || 'বিশুদ্ধ খাবার, সুস্থ জীবনের প্রতিশ্রুতি';
   const subheadline =
     settings?.heroSubheadline ||
-    'কাঠের ঘানিতে ভাঙ্গা খাঁটি সরিষার তেল ও test123 পুষ্টিকর সুপারফুড সরাসরি আপনার ঘরে।';
+    'কাঠের ঘানিতে ভাঙ্গা খাঁটি সরিষার তেল ও পুষ্টিকর সুপারফুড সরাসরি আপনার ঘরে।';
   const heroImg = settings?.heroImage || '/images/generated/hero_agro_farm_1790250221055.jpg';
   const hotline = settings?.hotline || '01786-239185';
   const whatsapp = settings?.whatsappNumber || '8801786239185';
